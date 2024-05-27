@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Casamento</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Casamento de Giovana e Pelson</h1>
+            <p>Querido(a) Matheus,</p>
+            <p>Gostaríamos muito de ter a sua presença no nosso dia especial. Estamos ansiosos para celebrar este momento tão importante ao seu lado!</p>
+            <p>Por favor, confirme sua presença e nos informe se você levará crianças e quantas.</p>
+            <form>
+                <div class="form-group">
+                    <label for="children">Você vai levar crianças?</label>
+                    <select id="children" name="children">
+                        <option value="no">Não</option>
+                        <option value="yes">Sim</option>
+                    </select>
+                </div>
+                <div class="form-group" id="children-count-group" style="display: none;">
+                    <label for="children-count">Quantas crianças?</label>
+                    <input type="number" id="children-count" name="children-count" min="1">
+                </div>
+                <button type="submit">Confirmar Presença</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        document.getElementById('children').addEventListener('change', function() {
+            var childrenCountGroup = document.getElementById('children-count-group');
+            if (this.value === 'yes') {
+                childrenCountGroup.style.display = 'block';
+            } else {
+                childrenCountGroup.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
